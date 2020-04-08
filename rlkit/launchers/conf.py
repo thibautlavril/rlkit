@@ -13,6 +13,7 @@ If you're going to rename this directory and use EC2, then change
 # The directory of the project, not source
 rlkit_project_dir = join(os.path.dirname(rlkit.__file__), os.pardir)
 LOCAL_LOG_DIR = join(rlkit_project_dir, 'data')
+AWS_S3_PATH = None
 
 """
 ********************************************************************************
