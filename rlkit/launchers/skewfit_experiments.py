@@ -22,6 +22,7 @@ def skewfit_full_experiment(variant):
     variant['skewfit_variant']['save_vae_data'] = True
     full_experiment_variant_preprocess(variant)
     train_vae_and_update_variant(variant)
+    print("Done with pretrain of training of VAE")
     skewfit_experiment(variant['skewfit_variant'])
 
 
@@ -148,6 +149,7 @@ def train_vae(variant, return_data=False):
         if should_save_imgs:
             t.dump_samples(epoch)
         t.update_train_weights()
+        print("Update VAE during pretraining")
     logger.save_extra_data(m, 'vae.pkl', mode='pickle')
     if return_data:
         return m, train_data, test_data

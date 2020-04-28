@@ -8,12 +8,13 @@ from rlkit.launchers.skewfit_experiments import \
     skewfit_full_experiment
 from rlkit.torch.vae.conv_vae import imsize48_default_architecture
 
+# Maybe "do_state_exp" not tu use images?
 
 if __name__ == "__main__":
     variant = dict(
-        algorithm='Skew-Fit-SAC',
+        algorithm='Skew-Fit-SAC', # Don't know the difference with Skew-Fit
         double_algo=False,
-        online_vae_exploration=False,
+        online_vae_exploration=False, # Doesn't seems to be used
         imsize=48,
         env_id='Point2D-Box-Wall-v1',
         # init_camera=sawyer_door_env_camera_v0,
